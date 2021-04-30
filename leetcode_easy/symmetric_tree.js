@@ -1,8 +1,8 @@
 // given a binary tree, verify that it is symmetric around its root
 
 class BT {
-    constructor(value) {
-        this.value = value;
+    constructor(val) {
+        this.val = val;
         this.left = null;
         this.right = null;
 
@@ -10,7 +10,8 @@ class BT {
 }
 
 function isSymmetric(root) {
-    return mirrorCheck(root, root);
+    if(root == null) return true
+    return mirrorCheck(root.left, root.right);
 }
 
 function mirrorCheck(t1, t2) {

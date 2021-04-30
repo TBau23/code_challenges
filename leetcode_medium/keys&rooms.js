@@ -5,6 +5,8 @@
 
 
 // classic graph traversal problem
+// time complexity is O(N+E) where N is Rooms and E is keys. Nodes and edges basically. 
+// space complexity comes from stack and visited array 
 
 function canVisitAllRooms(rooms) {
 
