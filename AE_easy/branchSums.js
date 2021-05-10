@@ -8,6 +8,14 @@ class BinaryTree {
     }
 }
 
+// O(n) time || O(n) space
+
+// space complexity here is affected by two things - the list of sums and the recursive stack
+// recursive stack of balanced BT never exceeds O(logn) 
+// number of sums is just number of leaf nodes - this is bounded by O(n) 
+// in a balanced tree, leaf nodes is always roughly half of n which just works out to n space
+// so you take greater of the 2 
+
 function branchSums(root) {
     const result = [];
     sumsHelper(root, root.value, result)
