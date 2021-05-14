@@ -27,5 +27,4 @@ function alienSort(words, order) {
     }
     return true
         
-    
 }
