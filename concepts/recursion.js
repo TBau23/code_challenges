@@ -35,3 +35,13 @@ function maxDepth(root) {
     // left_ans = bottom_up(root.left)
     // right_ans = bottom_up(root.right)
     // return answers
+
+
+function maxDepthII(root) {
+    if(root == null) return 0
+    
+    let left = maxDepth(root.left);
+    let right = maxDepth(root.right);
+    
+    return Math.max(left, right) + 1
+}

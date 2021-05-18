@@ -30,16 +30,21 @@ function createCircle(radius) {
 
 // Constructor function - clearly marked by use of new and this
 // bares similarity to class syntax from other languages
-function Circle(radius) {
+function Circle(radius, name) {
     
     // this is a reference to the specific instance of the object that is executing whatever code
     this.radius = radius;
+    this.name = name;
     this.draw = function() {
         console.log('draw')
     }
+    this.sayName = () => {
+        return this.name
+    }
 }
 // new keyword creates an empty object and points to the Circle function in this case. it sort of binds the this keyword to the object
-const another = new Circle(2)
+const another = new Circle(2, 'Gerald')
+console.log(another.sayName().split(''))
 // console.log(another)
 // console.log(another.constructor)
 
@@ -83,11 +88,36 @@ function increase(number) {
 increase(number)
 console.log(number) // console logs 10 - 
 
+// versus doing this to an object
+
+let num = {value: 10, name: 'McFred'};
+
+function increase(obj) {
+    obj.value++
+}
+
+increase(num)
+
+
+console.log(num) // value will be 11
+
 
 // working with properties
 
 
 // private properties
+// abstraction is about hiding the details and showing only the essentials
+// hide implementation details
 
+function car(color, model) {
+    this.color = color;
+    this.model = model;
+    this.rev = () => {
+        console.log("wooohooo I'm a " + this.color + ' ' + this.model)
+    }
+}
+
+const myCar = new car('red', 'Ferrari')
+myCar.rev()
 
 // getters/settters
