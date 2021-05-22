@@ -115,6 +115,9 @@ function car(color, model) {
     this.rev = () => {
         console.log("wooohooo I'm a " + this.color + ' ' + this.model)
     }
+    // the natural way to hide implementation details is to just declare things that you want to hide
+    // as variables, making them invisible to anyone interacting with the object
+    
 }
 
 const myCar = new car('red', 'Ferrari')
