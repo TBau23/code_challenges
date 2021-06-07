@@ -24,4 +24,20 @@ Object.defineProperty(person, 'name', {
     enumerable: true // if false, the below log wont show name property
 })
 
-console.log(Object.keys(person))
+
+function Circle(radius) {
+    this.radius = radius;
+
+}
+
+Circle.prototype.toString = function() {
+    return 'Circle with radius ' + this.radius;
+}
+
+const myCircle = new Circle(5)
+
+
+console.log(myCircle.toString())
+
+// should not modify built in prototypes - only edit those you have created
+
